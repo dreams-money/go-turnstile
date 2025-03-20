@@ -11,7 +11,7 @@ Open a new [issue](https://github.com/dreams-money/turnstile/issues/new).
 ## New features
 
 If you have a feature request, describe your idea by opening a new
-[discussion](https://github.com/dreams-money/go-turnstile/discussions/new)
+[discussion](https://github.com/dreams-money/turnstile/discussions/new)
 
 ## Code
 
