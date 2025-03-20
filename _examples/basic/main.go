@@ -59,5 +59,6 @@ func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/submit", submit)
 
+	log.Println("Server starting at http://localhost:8888")
 	http.ListenAndServe(":8888", nil)
 }
