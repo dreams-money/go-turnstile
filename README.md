@@ -48,7 +48,7 @@ Turnstilre requires that you call their /siteverify api to check the validity of
 As such, the verification returns two errors types:
 
 1) A **bot error** - this only returns if Turnstile /siteverify was successfully called.
-2) A /siteverify **request error** - this signifies that there was an HTTP related error called /siteverify
+2) A /siteverify **request error** - this signifies that there was an HTTP related error with /siteverify
 
 Here's how you may handle these errors:
 
@@ -72,7 +72,7 @@ if botErr == turnstile.ErrTimeoutOrDuplicate {
 
 `turnstile.ErrTimeoutOrDuplicate` is a common error if the user uses the back button.
 
-For a complete example please navigate through [_examples](_examples) directory.
+For a complete example please navigate through the [_examples](_examples) directory.
 
 ## License
 
