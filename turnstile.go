@@ -21,20 +21,20 @@ type SiteVerifyResponse struct {
 	// TokenID    string   `json:"tokenId"`
 }
 
-type Middleware struct {
+type Client struct {
 	SecretKey string
 }
 
-func New(secretKey string) Middleware {
-	return Middleware{
+func New(secretKey string) Client {
+	return Client{
 		SecretKey: secretKey,
 	}
 }
 
-func (m *Middleware) Verify(token, remoteip string) (error, error) {
+func (c *Client) Verify(token, remoteip string) (error, error) {
 
 	siteVerifyForm := url.Values{}
-	siteVerifyForm.Add("secret", m.SecretKey)
+	siteVerifyForm.Add("secret", c.SecretKey)
 	siteVerifyForm.Add("response", token)
 	siteVerifyForm.Add("remoteip", remoteip)
 	siteVerifyFormData := strings.NewReader(siteVerifyForm.Encode())
