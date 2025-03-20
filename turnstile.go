@@ -22,19 +22,19 @@ type SiteVerifyResponse struct {
 }
 
 type Client struct {
-	SecretKey string
+	secretKey string
 }
 
 func New(secretKey string) Client {
 	return Client{
-		SecretKey: secretKey,
+		secretKey: secretKey,
 	}
 }
 
 func (c *Client) Verify(token, remoteip string) (error, error) {
 
 	siteVerifyForm := url.Values{}
-	siteVerifyForm.Add("secret", c.SecretKey)
+	siteVerifyForm.Add("secret", c.secretKey)
 	siteVerifyForm.Add("response", token)
 	siteVerifyForm.Add("remoteip", remoteip)
 	siteVerifyFormData := strings.NewReader(siteVerifyForm.Encode())
